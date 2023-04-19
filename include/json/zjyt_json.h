@@ -38,6 +38,18 @@ void ObjectToJson(std::string object_key, std::vector<double> object_value, cons
 /**
  * @brief 
  * 
+ * @param object_first_key 
+ * @param object_first_value 
+ * @param object_second_key 
+ * @param object_second_value 
+ * @param json_key 
+ * @param output_json 
+ */
+void ObjectToJson(std::string object_first_key, std::string object_first_value, std::string object_second_key, std::vector<double> object_second_value, std::string json_key, std::string &output_json);
+
+/**
+ * @brief 
+ * 
  * @param json_key 
  * @param json_value 
  * @param output_json 
@@ -156,6 +168,15 @@ bool GetValueFromJson(std::string json_string, bool &output_value);
  */
 bool GetValueFromJson(std::string json_string, int &output_value);
 
+/**
+ * @brief Get the Value From Json object
+ * 
+ * @param json_string 
+ * @param output_value_str 
+ * @param output_value_num 
+ * @return true 
+ * @return false 
+ */
 bool GetValueFromJson(std::string json_string, std::map<std::string, std::string> &output_value_str, std::map<std::string, std::array<double, 6>> &output_value_num);
 /**
  * @brief Get the Array From Json object

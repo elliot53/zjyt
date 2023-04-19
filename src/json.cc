@@ -6,11 +6,16 @@ void StringToJson(const char *json_key, const char *json_value, std::string &out
 {
     Json::Value root;
     Json::StreamWriterBuilder builder;
-
-    root[json_key] = json_value;
+    if (!json_value)
+    {
+        root[json_key];
+    }
+    else 
+    {
+        root[json_key] = json_value;
+    }
     output_json = Json::writeString(builder, root);
 }
-
 void ObjectToJson(std::string object_key, std::vector<double> object_value, const char *json_key, std::string &output_json)
 {
     Json::Value root;
@@ -24,7 +29,20 @@ void ObjectToJson(std::string object_key, std::vector<double> object_value, cons
     root[json_key] = data;
     output_json = Json::writeString(builder, root);
 }
+void ObjectToJson(std::string object_first_key, std::string object_first_value, std::string object_second_key, std::vector<double> object_second_value, std::string json_key, std::string &output_json)
+{
+    Json::Value root;
+    Json::Value data;
+    Json::StreamWriterBuilder builder;
 
+    data[object_first_key] = object_first_value;
+    for (auto &it : object_second_value)
+    {
+        data[object_second_key].append(it);
+    }
+    root[json_key] = data;
+    output_json = Json::writeString(builder, root);
+}
 void NumberToJson(const char *json_key, int json_value, std::string &output_json)
 {
     Json::Value root;
@@ -63,11 +81,18 @@ void ArrayToJson(const char *json_key, int *array, int array_size, std::string &
     Json::Value data;
     Json::StreamWriterBuilder builder;
 
-    for (int i{0}; i < array_size; i++)
+    if (!array)
     {
-        data[i] = array[i];
+        root[json_key].resize(0);
     }
-    root[json_key] = data;
+    else 
+    {
+        for (int i{0}; i < array_size; i++)
+        {
+            data[i] = array[i];
+        }
+        root[json_key] = data;
+    }
     output_json = Json::writeString(builder, root);
 }
 
