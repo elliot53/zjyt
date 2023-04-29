@@ -16,4 +16,17 @@ void Write(std::string file, std::string in)
     f.close();
 }
 
+bool zjyt_open(std::string file)
+{
+    if (access(file.c_str(), F_OK) != 0)
+        return false;
+    else 
+        return true;
+}
+
+void zjyt_append(std::string file, std:string in)
+{
+    
+}
+
 }  // namespace zjyt 

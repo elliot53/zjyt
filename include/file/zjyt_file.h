@@ -21,6 +21,10 @@ static std::string default_file = "/tmp/zjyt/";
 
 void Write(std::string file, std::string in);
 
+bool zjyt_open(std::string file);
+
+bool zjyt_append(std::string file, std:string in);
+
 }  // namespace zjyt 
 
 #endif  // ZJYT_FILE_H
