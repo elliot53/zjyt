@@ -23,7 +23,7 @@ void Write(std::string file, std::string in);
 
 bool zjyt_open(std::string file);
 
-bool zjyt_append(std::string file, std:string in);
+bool zjyt_append(std::string file, std::string in);
 
 }  // namespace zjyt 
 

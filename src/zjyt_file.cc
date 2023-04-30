@@ -24,7 +24,7 @@ bool zjyt_open(std::string file)
         return true;
 }
 
-void zjyt_append(std::string file, std:string in)
+bool zjyt_append(std::string file, std::string in)
 {
     
 }

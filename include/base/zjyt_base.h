@@ -12,11 +12,14 @@
 #ifndef ZJYT_BASE_H
 #define ZJYT_BASE_H
 
+#include <iostream>
+#include <fstream>
 #include <string>
 #include <unistd.h>
 
 extern "C" {
 
+#include <assert.h>
 #include <sys/stat.h>
 
 }

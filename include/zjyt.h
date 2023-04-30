@@ -12,3 +12,4 @@
 
 #include "json/zjyt_json.h"
 #include "file/zjyt_file.h"
+#include "log/zjyt_log.h"
